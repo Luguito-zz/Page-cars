@@ -1,0 +1,17 @@
+.Header{
+    background-color: rgba(171, 171, 171, 0.64);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+
+.Header ul {
+   display: flex;
+   justify-content: center;
+   align-content: space-between;
+}
+
+.Header ul li {
+    
+}

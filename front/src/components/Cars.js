@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
 import {getCars} from '../queries/queries';
 import '../css/car.css'
+import {Row,Col,Grid} from 'react-bootstrap';
 
 
 class Cars extends Component{
@@ -12,15 +13,16 @@ class Cars extends Component{
        }else{
         return data.cars.map(car=>{
             return(
-                <div key={car.id}>
-                    <ul>
-                        <li>{car.name} <ul>
-                            <li>{car.price}</li>
-                            <li>{car.models.name}</li>
-                            </ul>
-                         </li>
-                    </ul>
-                </div>
+            <Grid key={car.id}>
+                <Row className="show-grid" >
+                    <Col sm={6} md={3}>
+                        <h1>{car.name}</h1>
+                        <br/>
+                        <p>{car.price}</p>
+                        <p>{car.models.name}</p>
+                    </Col>
+                </Row>
+            </Grid>
             )
         })
        }

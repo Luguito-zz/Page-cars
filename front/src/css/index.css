@@ -15,6 +15,7 @@ code {
 
 
 .App-logo {
+  margin-top:7px;
   animation: App-logo-spin infinite 1s linear;
   height: 5vmin;
 }

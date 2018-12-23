@@ -20,7 +20,8 @@ const {GraphQLObjectType,
        GraphQLString,
        GraphQLInt,
        GraphQLList,
-       GraphQLNonNull } = graphql
+       GraphQLNonNull,
+       GraphQLEnumType } = graphql
 
 
 const CarsType = new GraphQLObjectType({
@@ -107,6 +108,36 @@ const Mutation = new GraphQLObjectType({
                     name:args.name
                 });
                 return model.save()
+            }
+        },
+        updateCar:{
+            type:CarsType,
+            args:{
+                id:{type:GraphQLID},
+                name:{type:GraphQLString},
+            },
+            async resolve(parent,args){
+                let update = {
+                    name: args.name
+                }
+                let updateCar = await Car.findByIdAndUpdate({_id:args.id}, update, (err, res)=>{
+                    if(err){
+                        console.log(err)
+                    }
+                }) 
+            }
+        },
+        deleteCar:{
+            type:CarsType,
+            args:{
+                id:{type:GraphQLID}
+            },
+            resolve(parent,args){
+                const deleted = Car.findByIdAndDelete(args.id).exec();
+                if (!deleted) {
+                    throw new Error('Error')
+                  }
+                  return deleted;
             }
         }
     }

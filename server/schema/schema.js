@@ -124,10 +124,11 @@ const Mutation = new GraphQLObjectType({
                     if(err){
                         console.log(err)
                     }
+                    return updateCar;
                 }) 
             }
         },
-        deleteCar:{
+        deletedCar:{
             type:CarsType,
             args:{
                 id:{type:GraphQLID}

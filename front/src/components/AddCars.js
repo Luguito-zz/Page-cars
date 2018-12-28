@@ -40,9 +40,9 @@ submitForm(e){
 render() {
     return (
     <div>
-        <Form horizontal onSubmit={this.submitForm.bind(this)}>
+        <Form horizontal onSubmit={this.submitForm.bind(this)} className="Form">
             <FormGroup controlId="formHorizontalEmail">
-                <Col componentClass={ControlLabel} sm={2}>
+                <Col componentClass={ControlLabel} sm={5}>
                 Name
                 </Col>
                 <Col sm={3}>
@@ -51,7 +51,7 @@ render() {
             </FormGroup>
 
             <FormGroup controlId="formHorizontalPassword">
-                <Col componentClass={ControlLabel} sm={2}>
+                <Col componentClass={ControlLabel} sm={5}>
                 Price
                 </Col>
                 <Col sm={3}>
@@ -60,10 +60,10 @@ render() {
             </FormGroup>
 
             <FormGroup>
-                <Col componentClass={ControlLabel} sm={2}>
+                <Col componentClass={ControlLabel} sm={5}>
                     Model
                 </Col>
-                <Col sm={3}>
+                <Col sm={5}>
                     <select onChange={(e)=> this.setState({model:e.target.value})}>
                         <option>Select Model</option>
                         {this.displayModels()}
@@ -72,7 +72,7 @@ render() {
             </FormGroup>
 
             <FormGroup>
-                <Col smOffset={2} sm={10}>
+                <Col smOffset={5} sm={10}>
                 <Button type="submit" bsStyle="primary">Add Cars</Button>
                 </Col>
             </FormGroup>

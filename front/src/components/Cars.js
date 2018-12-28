@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
 import {getCars} from '../queries/queries';
-import '../css/car.css'
-import {Row,Col,Grid} from 'react-bootstrap';
+import '../css/car.css';
+import {Row,Col,Grid,Button} from 'react-bootstrap';
+
+//Component
+import DeletedButton from '../components/DeletedCar';
 
 
 class Cars extends Component{
@@ -13,28 +16,28 @@ class Cars extends Component{
        }else{
         return data.cars.map(car=>{
             return(
-            <Grid key={car.id}>
-                <Row className="show-grid" >
-                    <Col sm={6} md={3}>
-                        <h1>{car.name}</h1>
-                        <br/>
-                        <p>{car.price}</p>
-                        <p>{car.models.name}</p>
-                    </Col>
-                </Row>
-            </Grid>
+            <Col sm={10} md={3} key={car.id} className="Cars">
+            <label htmlFor=""><h2>{car.name}</h2></label><br/>
+              <label>Price :</label> {car.price}<br/>
+              <label>Model :</label> {car.models.name} <br/> 
+               <DeletedButton CarId={car.id}/>
+            </Col>
             )
         })
        }
     }
     render(){
-        console.log(this.props.data)
         return(
-        <div className="Cars">
-              {this.displayCars()}
+        <div>
+        <Grid >
+            <Row  >
+            {this.displayCars()}
+            </Row>
+            
+        </Grid>
+       <center><Button bsStyle="primary" className="ButtonMain" href="/addcars">Add Cars</Button></center>  
         </div>
-        );
+        )
     }
 }
-
 export default graphql(getCars)(Cars);

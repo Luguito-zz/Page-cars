@@ -8,7 +8,7 @@ class Header extends Component{
         return( 
         <Jumbotron >
             <center>
-                <h1>Hello, world!</h1>
+                <h1>Welcome</h1>
                 <p>
                 This page is built with React, Graphql and Bootstrap. <br/> Of course it is in progress
                 </p>

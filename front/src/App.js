@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 import {ProgressBar} from 'react-bootstrap';
+
 //Components
-import Cars from './components/Cars';
 import NavBarH from './components/NavBar';
-import AddCars from './components/AddCars';
 import Header from './components/Jumbotron';
+import AppRoutes from './routes/AppRoutes';
 
 //Apollo Setup
 const client = new ApolloClient({
@@ -22,10 +22,10 @@ class App extends Component {
         <NavBarH/>
         <Header/>
         <center><ProgressBar active now={20} bsStyle="warning"/>Pagina en Construccion</center>
-        <Cars/>
-        <AddCars/>
+        <AppRoutes/>
       </div>
     </ApolloProvider>
+    
     );
   }
 }

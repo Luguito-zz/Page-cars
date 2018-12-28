@@ -35,4 +35,20 @@ const addCarsMutation = gql`
     }
 `
 
-export {getCars,getModel,addCarsMutation};
+const deletedCar = gql`
+    mutation($id:ID!){
+        deletedCar(id:$id){
+            name
+        }
+    }
+`
+
+const updateCar = gql`
+    mutation($id:ID!,$name:String!,$price:Int!){
+        updateCar(name:$name,price:$price){
+            name
+        }
+    }
+`
+
+export {getCars,getModel,addCarsMutation,deletedCar,updateCar};

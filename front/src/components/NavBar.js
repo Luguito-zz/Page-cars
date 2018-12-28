@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../images/logo.svg';
 
+
 import {Navbar,Nav,NavItem} from 'react-bootstrap';
 
 class NavBarH extends Component{
@@ -13,19 +14,19 @@ class NavBarH extends Component{
         </Navbar.Header>
     <Navbar.Collapse>
         <Nav>
-            <NavItem eventKey={1} href="#">
-                Link
+            <NavItem eventKey={1} href="/cars">
+                Cars
             </NavItem>
-            <NavItem eventKey={2} href="#">
-                Link
+            <NavItem eventKey={2}>
+                
             </NavItem>
         </Nav>
         <Nav pullRight>
-        <NavItem eventKey={1} href='./AddCars.js'>
+        <NavItem eventKey={1} href='/addcars'>
             Add Cars
         </NavItem>
-        <NavItem eventKey={2} href="#">
-            Link Right
+        <NavItem eventKey={2} href="/cars">
+            Cars
         </NavItem>
         </Nav>
     </Navbar.Collapse>

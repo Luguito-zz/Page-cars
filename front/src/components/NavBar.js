@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import logo from '../images/logo.svg';
-
+import '../css/App.css'
 
 import {Navbar,Nav,NavItem} from 'react-bootstrap';
 
 class NavBarH extends Component{
     render(){
         return( 
-    <Navbar inverse collapseOnSelect>
+  <Navbar inverse collapseOnSelect>
         <Navbar.Header>
         <img src={logo} className="App-logo" alt="logo" />
         <Navbar.Toggle />

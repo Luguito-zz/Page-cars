@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {graphql,compose} from 'react-apollo';
 import { getCars, addCarsMutation,getModel } from '../queries/queries';
-import {Button,Form,FormGroup,Col,FormControl,ControlLabel} from 'react-bootstrap';
 
 
 class AddCars extends Component{
@@ -36,52 +35,38 @@ submitForm(e){
         refetchQueries:[{query:getCars}]
     })
 }
+
  
 render() {
     return (
-    <div>
-        <Form horizontal onSubmit={this.submitForm.bind(this)} className="Form">
-            <FormGroup controlId="formHorizontalEmail">
-                <Col componentClass={ControlLabel} sm={5}>
-                Name
-                </Col>
-                <Col sm={3}>
-                    <FormControl type="text" onChange={(e)=>this.setState({name:e.target.value})} />
-                </Col>
-            </FormGroup>
-
-            <FormGroup controlId="formHorizontalPassword">
-                <Col componentClass={ControlLabel} sm={5}>
-                Price
-                </Col>
-                <Col sm={3}>
-                    <FormControl type="text" onChange={(e)=>this.setState({price:e.target.value})} />
-                </Col>
-            </FormGroup>
-
-            <FormGroup>
-                <Col componentClass={ControlLabel} sm={5}>
-                    Model
-                </Col>
-                <Col sm={5}>
-                    <select onChange={(e)=> this.setState({model:e.target.value})}>
-                        <option>Select Model</option>
+    <div className="row">
+        <form className="col s12" onSubmit={this.submitForm.bind(this)}>
+            <div className="row">
+                <div className="input-field col s4">
+                    <input id="name" type="text" className="validate" onChange={(e)=>this.setState({name:e.target.value})}/>
+                    <label htmlFor="name">Name</label>
+                </div>
+                <div className="input-field col s4">
+                    <input id="price" type="text" className="validate" onChange={(e)=>this.setState({price:e.target.value})}/>
+                    <label htmlFor="price">Price</label>
+                </div>
+                <div className="input-field col s4" onChange={(e)=>this.setState({model:e.target.value})}>
+                    <select id="models">
+                        <option>Choose your option</option>
                         {this.displayModels()}
                     </select>
-                </Col>
-            </FormGroup>
-
-            <FormGroup>
-                <Col smOffset={5} sm={10}>
-                <Button type="submit" bsStyle="primary">Add Cars</Button>
-                </Col>
-            </FormGroup>
-        </Form>
-    </div>
-
-
-
-      
+                    <label htmlFor="models">Select a Model</label>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col s12">
+                    <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i className="material-icons right">send</i>
+                    </button>
+                </div>
+           </div>
+        </form>
+    </div>    
     );
   }
 }

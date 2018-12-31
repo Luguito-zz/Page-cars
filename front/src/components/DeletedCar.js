@@ -25,9 +25,9 @@ class DeletedButton extends Component{
     render(){
         return(
             <div>
-            <Button bsStyle="danger" bsSize="xsmall" onClick={(e)=>
+            <Button className="halfway-fab btn-floating pink pulse"  onClick={(e)=>
                 window.confirm("Are you sure you wish to delete this item?") &&
-                this.deleteButton(e)}>Delete</Button>
+                this.deleteButton(e)}><i className="material-icons">cancel</i></Button>
             </div>
         )
     }

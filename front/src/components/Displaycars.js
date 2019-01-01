@@ -7,7 +7,7 @@ class DisplayCarsInCard extends Component{
         const {Car} = this.props;
         return(
                 <div className="col s4 ">
-                    <div className="card">
+                    <div className="card card-panel hoverable">
                         <div className="card-image">
                             <img src={ferrari} alt=""/>
                             <DeletedButton CarId={Car.id}/>

@@ -39,34 +39,48 @@ submitForm(e){
  
 render() {
     return (
+<div className="container">
     <div className="row">
         <form className="col s12" onSubmit={this.submitForm.bind(this)}>
             <div className="row">
-                <div className="input-field col s4">
+                <div className="container center align">
+                <div className="input-field col s12">
                     <input id="name" type="text" className="validate" onChange={(e)=>this.setState({name:e.target.value})}/>
                     <label htmlFor="name">Name</label>
                 </div>
-                <div className="input-field col s4">
+            </div>
+            </div>
+            <div className="row">
+            <div className="container center align">
+                <div className="input-field col s12">
                     <input id="price" type="text" className="validate" onChange={(e)=>this.setState({price:e.target.value})}/>
                     <label htmlFor="price">Price</label>
                 </div>
-                <div className="input-field col s4" onChange={(e)=>this.setState({model:e.target.value})}>
+                </div>
+            </div>
+            <div className="row">
+            <div className="container center align">
+                <div className="input-field col s12" onChange={(e)=>this.setState({model:e.target.value})}>
                     <select id="models">
                         <option>Choose your option</option>
                         {this.displayModels()}
                     </select>
                     <label htmlFor="models">Select a Model</label>
                 </div>
+                </div>
             </div>
             <div className="row">
+                <div className="container center align">
                 <div className="col s12">
                     <button className="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i className="material-icons right">send</i>
                     </button>
                 </div>
+                </div>
            </div>
         </form>
-    </div>    
+    </div>   
+ </div>
     );
   }
 }

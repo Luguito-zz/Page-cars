@@ -1,3 +1,14 @@
 .page-footer{
   background-color: #282c34;
 }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1 0 auto;
+}
+  

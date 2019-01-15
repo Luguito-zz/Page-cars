@@ -1,0 +1,42 @@
+.Alfa-Romeo{
+    background-image: url('../images/2015alfaromeologo-l-9b1bfbe6a8a6ae5c.jpg');
+    height: 720px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(0, 152, 247, 0.886);
+}
+
+.Audi{
+    background-image: url('../images/Audi-logo-640x480.jpg');
+    height: 720px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: red;
+}
+
+
+.Ferrari{
+    background-image: url('../images/Ferrari-emblem-640x460.jpg');
+    height: 720px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: yellow;
+}

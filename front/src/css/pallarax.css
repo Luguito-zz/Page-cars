@@ -1,0 +1,21 @@
+.Home {
+    background-image: url('../images/ferrarihd.jpg');
+    height: 720px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: whitesmoke;
+
+}
+
+.Home p{
+    font-size: 30px;
+    color:whitesmoke;
+    background-attachment: fixed;
+
+}

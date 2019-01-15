@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 import 'materialize-css';
-import './css/App.css'
+
 //Components
-import NavBarH from './components/NavBar';
+
 
 import AppRoutes from './routes/AppRoutes';
 
@@ -19,7 +19,6 @@ class App extends Component {
     return (
     <ApolloProvider client={client}>
       <div className="app">
-        <NavBarH/>
         <AppRoutes/>
       </div>
     </ApolloProvider>

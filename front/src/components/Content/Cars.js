@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
-import {getCars} from '../queries/queries';
-import '../css/car.css';
+import {getCars} from '../../queries/queries';
 import {Button} from 'react-bootstrap';
-
+import NavBarH from '../Home/NavBar';
 //Component
 import DisplayCarsInCard from './Displaycars';
 
@@ -22,19 +21,23 @@ class Cars extends Component{
     }
     render(){
         return(
+    <div>
+        <NavBarH/>
         <div className="container">
+        
             <div className="row">
                 <h2>Cars</h2>
             {this.displayCars()}
           <div className="row">
               <div className="col s12">
                   <center>
-                  <Button bsStyle="primary" className="ButtonMain" href="/addcars">Add Cars</Button>
+                  <Button bsStyle="primary" className="ButtonMain" href="/addcars">Add Cars</Button>    
                   </center>
               </div>
           </div>
          </div>
          </div>
+    </div>     
         )
     }
 }

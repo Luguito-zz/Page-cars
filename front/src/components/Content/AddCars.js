@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {graphql,compose} from 'react-apollo';
-import { getCars, addCarsMutation,getModel } from '../queries/queries';
-
+import { getCars, addCarsMutation,getModel } from '../../queries/queries';
+import NavBarH from '../Home/NavBar';
 
 class AddCars extends Component{
     constructor(props){
@@ -39,7 +39,9 @@ submitForm(e){
  
 render() {
     return (
-<div className="container">
+<div className="addcarflexbox">
+    <NavBarH/>
+ <div className="container">
     <div className="row">
         <form className="col s12" onSubmit={this.submitForm.bind(this)}>
             <div className="row">
@@ -81,6 +83,7 @@ render() {
         </form>
     </div>   
  </div>
+</div>
     );
   }
 }

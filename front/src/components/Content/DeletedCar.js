@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from 'react-bootstrap';
-import {deletedCar, getCars} from '../queries/queries';
+import {deletedCar, getCars} from '../../queries/queries';
 import { graphql ,compose } from 'react-apollo';
 
 

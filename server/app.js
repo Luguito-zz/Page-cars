@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const graphqlHTTP= require('express-graphql');
 const schema = require('./schema/schema');
-require('./config.js');
+
 
 app.use(cors());
 
@@ -14,7 +14,7 @@ app.use('/graphql', graphqlHTTP({
 }))
 
 
-mongoose.connect(process.env.URLDB,{useNewUrlParser:true})
+mongoose.connect('mongodb://localhost:27017/page-cars',{useNewUrlParser:true})
 .then(console.log('MongoDB Connect Success'))
 .catch((err)=> console.log(err))
 

@@ -21,8 +21,8 @@ const {GraphQLObjectType,
        GraphQLInt,
        GraphQLList,
        GraphQLNonNull,
-       GraphQLEnumType } = graphql
-
+        } = graphql
+    
 
 const CarsType = new GraphQLObjectType({
     name:'Cars',
@@ -75,7 +75,7 @@ const RootQuery = new GraphQLObjectType({
             resolve(parent,args){
                 return Model.find({})
             }
-        }
+        },
     },
 });
 
@@ -95,7 +95,7 @@ const Mutation = new GraphQLObjectType({
                     price: args.price,
                     model:args.model  
                 });
-                return car.save()
+                return car.save();
             }
         },
         addModel:{
